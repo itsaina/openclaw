@@ -7,7 +7,7 @@
   "deploy": {
     "startCommand": "sh -c 'OPENCLAW_GATEWAY_PORT=$PORT node openclaw.mjs gateway --allow-unconfigured --bind lan'",
     "healthcheckPath": "/health",
-    "healthcheckTimeout": 30,
+    "healthcheckTimeout": 120,
     "restartPolicyType": "ON_FAILURE"
   }
 }
