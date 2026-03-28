@@ -5,6 +5,7 @@
     "dockerfilePath": "Dockerfile.railway"
   },
   "deploy": {
+    "startCommand": "node openclaw.mjs gateway --allow-unconfigured --bind lan --port ${PORT:-18789}",
     "healthcheckPath": "/health",
     "healthcheckTimeout": 30,
     "restartPolicyType": "ON_FAILURE"
