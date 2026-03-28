@@ -138,6 +138,10 @@ RUN if [ -n "$OPENCLAW_DOCKER_APT_PACKAGES" ]; then \
 RUN ln -sf /app/openclaw.mjs /usr/local/bin/openclaw \
  && chmod 755 /app/openclaw.mjs
 
+# Pre-seed config so gateway starts without interactive setup
+RUN mkdir -p /home/node/.openclaw
+COPY --chown=node:node railway-config/openclaw.json /home/node/.openclaw/openclaw.json
+
 ENV NODE_ENV=production
 
 USER node
